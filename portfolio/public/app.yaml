@@ -1,6 +1,6 @@
 runtime: custom
 env: flex
-service: portfolio
+service: gi-${_SERVER_ENV}-portfolio
 api_version: 1
 threadsafe: true
 

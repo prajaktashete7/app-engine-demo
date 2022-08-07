@@ -1,6 +1,6 @@
 runtime: custom
 env: flex
-service: spring
+service: gi-${_SERVER_ENV}-spring
 api_version: 1
 threadsafe: true
 

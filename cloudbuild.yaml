@@ -1,12 +1,15 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --project=starry-axis-344217']
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --project=${PROJECT_ID}']
   dir: spring/
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --project=starry-axis-344217']
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy --project=${PROJECT_ID}']
   dir: portfolio/
   
 timeout: '1600s'
+
+options:
+ logging: CLOUD_LOGGING_ONLY

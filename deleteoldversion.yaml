@@ -1,0 +1,38 @@
+steps:
+  - id: "delete stale app engine versions for spring application"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |-
+      echo "delete stale app engine versions for spring application"
+      SPRING=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="gi-${_SERVER_ENV}-spring" | awk "FNR > 2 {print $1}")
+      echo "$$SPRING"
+      for spring in ${SPRING[@]};
+      do
+        echo "${spring}"
+        gcloud app versions delete --service="gi-${_SERVER_ENV}-spring" "${spring}" --quiet
+      done
+
+  - id: "delete stale app engine versions for portfolio application"
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |-
+      echo "delete stale app engine versions for portfolio application"
+      PORTFOLIO=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="gi-${_SERVER_ENV}-portfolio" | awk "FNR > 2 {print $1}")
+      echo "$$PORTFOLIO"
+      for portfolio in ${PORTFOLIO[@]};
+      do
+        echo "${portfolio}"
+        gcloud app versions delete --service="gi-${_SERVER_ENV}-portfolio" "${portfolio}" --quiet
+      done
+
+substitutions:
+  _SERVER_ENV: dev
+
+timeout: '1600s'
+
+options:
+ logging: CLOUD_LOGGING_ONLY
