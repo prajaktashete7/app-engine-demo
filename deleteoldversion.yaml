@@ -6,12 +6,12 @@ steps:
     - '-c'
     - |-
       echo "delete stale app engine versions for spring application"
-      SPRING=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="gi-${_SERVER_ENV}-spring" | awk "FNR > 2 {print $1}")
+      SPRING=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="spring-app" | awk "FNR > 2 {print $1}")
       echo "$$SPRING"
       for spring in ${SPRING[@]};
       do
         echo "${spring}"
-        gcloud app versions delete --service="gi-${_SERVER_ENV}-spring" "${spring}" --quiet
+        gcloud app versions delete --service="spring-app" "${spring}" --quiet
       done
 
   - id: "delete stale app engine versions for portfolio application"
@@ -21,12 +21,12 @@ steps:
     - '-c'
     - |-
       echo "delete stale app engine versions for portfolio application"
-      PORTFOLIO=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="gi-${_SERVER_ENV}-portfolio" | awk "FNR > 2 {print $1}")
+      PORTFOLIO=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="portfolio-app" | awk "FNR > 2 {print $1}")
       echo "$$PORTFOLIO"
       for portfolio in ${PORTFOLIO[@]};
       do
         echo "${portfolio}"
-        gcloud app versions delete --service="gi-${_SERVER_ENV}-portfolio" "${portfolio}" --quiet
+        gcloud app versions delete --service="portfolio-app" "${portfolio}" --quiet
       done
 
 substitutions:
