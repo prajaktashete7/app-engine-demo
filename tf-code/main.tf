@@ -18,7 +18,7 @@ resource "google_cloudbuild_trigger" "filename-triggers" {
     "_SERVER_ENV" = "dev"
   }
   filename        = "cloudbuild.yaml"
-  service_account = "projects/starry-axis-344217/serviceAccounts/617125465455@cloudbuild.gserviceaccount.com"
+  service_account = "projects/starry-axis-344217/serviceAccounts/cloud-build-sa@starry-axis-344217.iam.gserviceaccount.com"
 }
 
 
