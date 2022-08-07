@@ -1,10 +1,12 @@
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'deploy spring app'
   entrypoint: 'bash'
   args:  ['app', 'deploy', '--project', '${PROJECT_ID}', 'app.yaml', '--quiet', '--version', '${SHORT_SHA}']
   dir: spring/
 
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'deploy portfolio app'
   entrypoint: 'bash'
   args: ['app', 'deploy', '--project', '${PROJECT_ID}', 'app.yaml', '--quiet', '--version', '${SHORT_SHA}']
   dir: portfolio/
