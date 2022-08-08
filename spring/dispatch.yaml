@@ -1,0 +1,3 @@
+dispatch:
+   - url: "spring.pannaspices.com/*"
+     service: spring-app

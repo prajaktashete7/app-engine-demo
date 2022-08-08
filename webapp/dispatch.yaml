@@ -1,3 +1,5 @@
-# dispatch:
-#    - url: "sampleapp.test890.searceinc.org/*"
-#      service: myserviceone
+dispatch:
+   - url: "sampleapp.pannaspices.com/*"
+     service: webapp
+
+
