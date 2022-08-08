@@ -27,6 +27,9 @@ handlers:
   static_files: index.html
   upload: index.html
 
+- url: /
+  static_dir: spring
+
 vpc_access_connector:
   name: projects/$PROJECT_ID/locations/us-cemtral1/connectors/app-engine-vpc-connector
 
