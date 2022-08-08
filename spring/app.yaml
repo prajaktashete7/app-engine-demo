@@ -26,8 +26,8 @@ handlers:
 - url: .*
   script: main.app
 
-vpc_access_connector:
-  name: projects/$PROJECT_ID/locations/us-cemtral1/connectors/app-engine-vpc-connector
+# vpc_access_connector:
+#   name: projects/$PROJECT_ID/locations/us-cemtral1/connectors/app-engine-vpc-connector
 
 
 
