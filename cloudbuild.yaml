@@ -9,7 +9,7 @@ steps:
   id: 'deploy portfolio app'
   entrypoint: 'bash'
   args: ['-c', 'gcloud app deploy --project=${PROJECT_ID} --version ${SHORT_SHA}']
-  dir: portfolio/
+  dir: webapp/
   
 timeout: '1600s'
 

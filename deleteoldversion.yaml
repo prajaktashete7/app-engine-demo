@@ -14,19 +14,19 @@ steps:
         gcloud app versions delete --service="spring-app" "${spring}" --quiet
       done
 
-  - id: "delete stale app engine versions for portfolio application"
+  - id: "delete stale app engine versions for webapp application"
     name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args:
     - '-c'
     - |-
-      echo "delete stale app engine versions for portfolio application"
-      PORTFOLIO=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="portfolio-app" | awk "FNR > 2 {print $1}")
-      echo "$$PORTFOLIO"
-      for portfolio in ${PORTFOLIO[@]};
+      echo "delete stale app engine versions for webapp application"
+      WEBAPP=$(gcloud app versions list --format="value(version.id)" --sort-by="~version.createTime" --service="webapp" | awk "FNR > 2 {print $1}")
+      echo "$$WEBAPP"
+      for webapp in ${WEBAPP[@]};
       do
-        echo "${portfolio}"
-        gcloud app versions delete --service="portfolio-app" "${portfolio}" --quiet
+        echo "${webapp}"
+        gcloud app versions delete --service="webapp" "${webapp}" --quiet
       done
 
 substitutions:
