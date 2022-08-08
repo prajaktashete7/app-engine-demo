@@ -1,10 +1,11 @@
-runtime: python
+runtime: python27
+
 env: standard
 network:
   name: default
   subnetwork_name: default
   session_affinity: true
-  
+
 service: spring-app
 api_version: 1
 threadsafe: true
@@ -29,3 +30,5 @@ handlers:
 
 vpc_access_connector:
   name: projects/$PROJECT_ID/locations/us-cemtral1/connectors/app-engine-vpc-connector
+
+
