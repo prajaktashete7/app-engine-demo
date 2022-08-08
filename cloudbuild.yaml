@@ -6,7 +6,7 @@ steps:
   dir: spring/
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  id: 'deploy portfolio app'
+  id: 'deploy webapp app'
   entrypoint: 'bash'
   args: ['-c', 'gcloud app deploy --project=${PROJECT_ID} --version ${SHORT_SHA}']
   dir: webapp/
