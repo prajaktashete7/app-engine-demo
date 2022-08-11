@@ -1,0 +1,16 @@
+steps:
+
+- id: stop App Engine webapp Service
+  name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', "gcloud app versions stop versions ${SHORT_SHA} --service=webapp --quiet", ]
+
+- id: stop App Engine spring-app Service
+  name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args: [ '-c', "gcloud app versions stop versions ${SHORT_SHA} --service=spring-app --quiet", ]
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: 1200s

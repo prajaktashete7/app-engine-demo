@@ -14,17 +14,11 @@
 
 # [START gae_flex_quickstart]
 from flask import Flask
-
-
 app = Flask(__name__)
-
-
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
     return 'Hello World!'
-
-
 if __name__ == '__main__':
     # This is used when running locally only. When deploying to Google App
     # Engine, a webserver process such as Gunicorn will serve the app.

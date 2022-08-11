@@ -1,5 +1,4 @@
 runtime: python27
-
 env: standard
 service: spring-app
 api_version: 1
@@ -25,7 +24,6 @@ handlers:
 
 - url: /
   static_dir: spring
-
 
 vpc_access_connector:
   name: projects/starry-axis-344217/locations/us-central1/connectors/app-engine-vpc-connector
