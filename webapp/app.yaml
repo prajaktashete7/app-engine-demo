@@ -1,5 +1,7 @@
 runtime: python
 env: flex
+network:
+  name: default
 entrypoint: gunicorn -b :$PORT main:app
 service: webapp
 runtime_config:
