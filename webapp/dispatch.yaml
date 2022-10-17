@@ -1,5 +1,5 @@
-dispatch:
-   - url: "sampleapp.pannaspices.com/*"
-     service: webapp
+# dispatch:
+#    - url: "sampleapp.pannaspices.com/*"
+#      service: webapp
 
 
