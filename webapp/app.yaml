@@ -2,7 +2,7 @@ runtime: python
 env: flex
 network:
   name: prod-vpc
-  subnetwork_name: projects/devops-project-364305/regions/us-central1/subnetworks/prod-private-subnet
+  subnetwork_name: prod-private-subnet
 entrypoint: gunicorn -b :$PORT main:app
 service: webapp
 runtime_config:
