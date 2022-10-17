@@ -1,7 +1,7 @@
 runtime: python
 env: flex
 network:
-  name: default
+  name: prod-vpc
 entrypoint: gunicorn -b :$PORT main:app
 service: webapp
 runtime_config:
