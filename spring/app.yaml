@@ -26,7 +26,7 @@ handlers:
   static_dir: spring
 
 vpc_access_connector:
-  name: projects/starry-axis-344217/locations/us-central1/connectors/app-engine-vpc-connector
+  name: projects/devops-project-364305/locations/us-central1/connectors/app-engine-vpc-connector
 
 
 
